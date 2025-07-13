@@ -71,4 +71,19 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Better indentation behavior
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cindent = true
+
+-- Use spaces instead of tabs
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
+-- Better line wrapping
+vim.opt.breakindent = true
+vim.opt.linebreak = true
+
 -- vim: ts=2 sts=2 sw=2 et

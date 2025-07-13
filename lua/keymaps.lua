@@ -64,4 +64,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Move lines in visual mode
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+
+-- Better text editing
+vim.keymap.set("n", "J", "mzJ`z", { desc = 'Join line below without moving cursor' })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = 'Scroll down half-page and center' })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = 'Scroll up half-page and center' })
+vim.keymap.set("n", "n", "nzzzv", { desc = 'Next search result and center' })
+vim.keymap.set("n", "N", "Nzzzv", { desc = 'Previous search result and center' })
+vim.keymap.set("n", "=ap", "ma=ap'a", { desc = 'Format paragraph and return to position' })
+
+-- LSP and development
+vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>", { desc = 'Restart LSP server' })
+
+-- Better paste and delete
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = 'Paste without overwriting register' })
+vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = 'Delete to void register (no yank)' })
+
+-- Quickfix and location list navigation
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = 'Next quickfix item and center' })
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = 'Previous quickfix item and center' })
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = 'Next location list item and center' })
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = 'Previous location list item and center' })
+
 -- vim: ts=2 sts=2 sw=2 et

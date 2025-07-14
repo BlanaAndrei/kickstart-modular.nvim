@@ -9,6 +9,7 @@ return {
       -- Configure linters by filetype
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        go = { 'golangcilint' },
         javascript = { 'eslint_d' },
         typescript = { 'eslint_d' },
         javascriptreact = { 'eslint_d' },

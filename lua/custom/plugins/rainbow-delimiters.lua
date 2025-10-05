@@ -1,5 +1,7 @@
 return {
   'HiPhish/rainbow-delimiters.nvim',
+  -- Disable in VS Code/Cursor to prevent visual conflicts
+  enabled = not vim.g.vscode,
   config = function()
     local rainbow_delimiters = require('rainbow-delimiters')
     

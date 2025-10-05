@@ -93,6 +93,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Load VSCode/Cursor LSP fix before anything else
+require 'vscode-lsp-fix'
+
 -- [[ Setting options ]]
 require 'options'
 
